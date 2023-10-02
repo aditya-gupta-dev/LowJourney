@@ -6,5 +6,5 @@
 
 <Router>
   <Route path="/" component={Home}/>
-  <Route path="/history" component={History}/>
+  <Route path="history" component={History}/>
 </Router>
