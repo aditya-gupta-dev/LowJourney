@@ -9,7 +9,7 @@
 </script>
 
 <div class="navbar">
-    <h4> { $user?.email } </h4>
+    <h5> { $user?.email } </h5>
     <Button text="Sign Out" onClick={ signOut }/>
     <Link to="/history" class="navigator">
         <Button text="History"/>
@@ -17,7 +17,7 @@
 </div>
 
 <style>
-    h4 {
+    h5 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600; 
         margin-right: 14px;

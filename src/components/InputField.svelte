@@ -1,7 +1,8 @@
 <script lang="ts">
     import { collection, addDoc } from "firebase/firestore";
-    import { database, user } from "../store/store";
+    import { database, imageSource, user } from "../store/store";
     import CircularProgressBar from "./CircularProgressBar.svelte";
+    import { getGeneratedImageUrl } from "../api/api";
 
     let value: string = "";
     let isLoading: boolean = false;
@@ -11,8 +12,14 @@
             const email = $user?.email!;
             const collectionRef = collection($database!, email);
 
-
-            await addDoc(collectionRef, { prompt: value });
+            isLoading = true;
+            const url = await getGeneratedImageUrl(value);
+            
+            isLoading = false;
+            imageSource.set(url);
+            
+            await addDoc(collectionRef, { prompt: value, responseUrl: $imageSource });
+            value = "";
         }
     }
 </script>
