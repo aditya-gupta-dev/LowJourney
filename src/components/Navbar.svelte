@@ -23,7 +23,7 @@
         margin-right: 14px;
     }
     .navbar {
-        background-color: #3498db;
+        background-color: mediumaquamarine;
         color: white;
         padding-top: 4px;
         padding-right: 10px;

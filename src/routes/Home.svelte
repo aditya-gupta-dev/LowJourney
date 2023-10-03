@@ -3,7 +3,7 @@
     import  { initializeApp, type FirebaseApp } from 'firebase/app';
     import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
     import { onMount } from "svelte";
-    import { auth, database, user } from "../store/store";
+    import { auth, database, imageSource, user } from "../store/store";
     import Button from "../components/Button.svelte";
     import InputField from "../components/InputField.svelte";
     import Navbar from "../components/Navbar.svelte";
@@ -31,6 +31,7 @@
 
 {#if $user}
     <Navbar/>
+    <img src={ $imageSource } alt="Type out your imagination"/>
     <InputField/>
 {:else} 
     <div class="container">

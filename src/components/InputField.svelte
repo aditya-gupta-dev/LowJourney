@@ -1,21 +1,26 @@
 <script lang="ts">
     import { collection, addDoc } from "firebase/firestore";
     import { database, user } from "../store/store";
+    import CircularProgressBar from "./CircularProgressBar.svelte";
 
     let value: string = "";
+    let isLoading: boolean = false;
     
     const keydown = async (event: KeyboardEvent) => {
         if(event.key === 'Enter') {
-            
             const email = $user?.email!;
             const collectionRef = collection($database!, email);
-            
+
+
             await addDoc(collectionRef, { prompt: value });
         }
     }
 </script>
 
 <div class="input-container">
+    {#if isLoading}
+        <CircularProgressBar/>
+    {/if}
     <input type="text" placeholder="Imagine" bind:value={ value } on:keydown={ keydown }>
 </div>
 
@@ -28,7 +33,7 @@
         width: 100%;
         padding-top: 15px;
         padding-bottom: 15px;
-        background-color: #3498db;
+        background-color: mediumaquamarine;
     }
 
     input {

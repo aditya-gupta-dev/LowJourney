@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { QuerySnapshot, collection, getDocs, type DocumentData } from "firebase/firestore";
+    import { collection, getDocs } from "firebase/firestore";
     import { onMount } from "svelte";
     import { database, user } from "../store/store";
     import { Link } from "svelte-routing";
     import Button from "../components/Button.svelte";
     import HistoryItem from "../components/HistoryItem.svelte";
+    import CircularProgressBar from "../components/CircularProgressBar.svelte";
 
     let prompts: any[] = [];
 
@@ -36,8 +37,10 @@
     <div class="container">
         
         {#if isLoading}
-            <h1>Loading...</h1>
-        {:else}    
+            <div class="circular">
+                <CircularProgressBar/>
+            </div>    
+            {:else}
             {#each prompts as prompt}
                 <HistoryItem prompt={ prompt } />
             {/each}
@@ -48,6 +51,12 @@
 {/if}
 
 <style>
+    .circular {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .title {
         display: flex;
         flex-direction: row;
