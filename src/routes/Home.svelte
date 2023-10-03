@@ -3,15 +3,17 @@
     import  { initializeApp, type FirebaseApp } from 'firebase/app';
     import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
     import { onMount } from "svelte";
-    import { auth, user } from "../store/store";
+    import { auth, database, user } from "../store/store";
     import Button from "../components/Button.svelte";
     import InputField from "../components/InputField.svelte";
     import Navbar from "../components/Navbar.svelte";
+    import { getFirestore } from "firebase/firestore";
 
     let app: FirebaseApp | undefined = undefined;
 
     onMount(async () => {
         app = initializeApp(firebaseCredentials);
+        database.set(getFirestore());
     });
 
     const signIn = async () => {
