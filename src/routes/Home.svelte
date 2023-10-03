@@ -31,7 +31,9 @@
 
 {#if $user}
     <Navbar/>
-    <img src={ $imageSource } alt="Type out your imagination"/>
+    <div class="image-container">
+        <img src={ $imageSource } alt="Type out your imagination"/>
+    </div>
     <InputField/>
 {:else} 
     <div class="container">
@@ -43,6 +45,18 @@
 {/if}
 
 <style>
+    .image-container {
+        width: 340px;
+        height: 220px;
+        border-radius: 12px;
+        border: 1px solid #ffaa;
+        overflow: hidden;
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
     h3 {
         font-family: Arial, Helvetica, sans-serif;
     }
