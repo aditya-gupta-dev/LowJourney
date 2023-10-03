@@ -1,9 +1,16 @@
 <script lang="ts">
+    import { collection, addDoc } from "firebase/firestore";
+    import { database, user } from "../store/store";
+
     let value: string = "";
     
-    const keydown = (event: KeyboardEvent) => {
+    const keydown = async (event: KeyboardEvent) => {
         if(event.key === 'Enter') {
             
+            const email = $user?.email!;
+            const collectionRef = collection($database!, email);
+            
+            await addDoc(collectionRef, { prompt: value });
         }
     }
 </script>
