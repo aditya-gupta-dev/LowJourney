@@ -1,8 +1,18 @@
 import { huggingfaceCredentials, models } from "../config";
 
+function getSavedModelFromLocalStorage() {
+    const selectedModel: string | null = localStorage.getItem("selectedModel");
+    if(selectedModel !== null) {
+        return models[`${selectedModel}`];
+    } else {
+        return models.stableDiffusion;
+    }
+}
+
 export async function getGeneratedImageUrl(prompt: string): Promise<string | null> {
-    try {
-        const response = await fetch(models.stableDiffusion, {
+    try {        
+        const savedModel = getSavedModelFromLocalStorage();
+        const response = await fetch(savedModel, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${huggingfaceCredentials.apiKey}`
