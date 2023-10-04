@@ -1,9 +1,16 @@
-<script>
-    import { beforeUpdate } from "svelte";
+<script lang="ts">
+    import { beforeUpdate, onMount } from "svelte";
     import { models } from "../config";
     import { selectedModel } from "../store/store";
 
     let availableModels = Object.keys(models);
+
+    onMount(() => {
+      const savedModel: string | null = localStorage.getItem("selectedModel");
+      if(savedModel) {
+        selectedModel.set(savedModel);
+      }
+    });
     
     beforeUpdate(() => {
         if($selectedModel) {

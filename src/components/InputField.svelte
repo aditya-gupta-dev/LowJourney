@@ -1,6 +1,6 @@
 <script lang="ts">
     import { collection, addDoc } from "firebase/firestore";
-    import { database, imageSource, user } from "../store/store";
+    import { database, imageSource, selectedModel, user } from "../store/store";
     import CircularProgressBar from "./CircularProgressBar.svelte";
     import { getGeneratedImageUrl } from "../api/api";
 
@@ -18,7 +18,7 @@
             isLoading = false;
             imageSource.set(url);
             
-            await addDoc(collectionRef, { prompt: value, responseUrl: $imageSource });
+            await addDoc(collectionRef, { prompt: value, responseUrl: $imageSource, model: $selectedModel });
             value = "";
         }
     }

@@ -15,6 +15,7 @@
     onMount(async () => {
         app = initializeApp(firebaseCredentials);
         database.set(getFirestore());
+        console.clear();
     });
 
     const signIn = async () => {
