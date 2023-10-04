@@ -1,3 +1,11 @@
+export const models = {
+    stableDiffusion: "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
+    ikeaInstructionsLoraSDXL: "https://api-inference.huggingface.co/models/ostris/ikea-instructions-lora-sdxl",
+    runwayMLStableDiffusion: "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5",
+    pixelArt: "https://api-inference.huggingface.co/models/nerijs/pixel-art-xl",
+    openJourney: "https://api-inference.huggingface.co/models/prompthero/openjourney"
+};
+
 export const huggingfaceCredentials = {
     apiKey: "YOUR_HUGGING_FACE_API_KEY"
 };
