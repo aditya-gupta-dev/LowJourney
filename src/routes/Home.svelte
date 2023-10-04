@@ -8,6 +8,7 @@
     import InputField from "../components/InputField.svelte";
     import Navbar from "../components/Navbar.svelte";
     import { getFirestore } from "firebase/firestore";
+    import Dropdown from "../components/Dropdown.svelte";
 
     let app: FirebaseApp | undefined = undefined;
 
@@ -34,6 +35,7 @@
     <div class="image-container">
         <img src={ $imageSource } alt="Type out your imagination"/>
     </div>
+    <Dropdown/>
     <InputField/>
 {:else} 
     <div class="container">
