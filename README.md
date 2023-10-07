@@ -16,3 +16,5 @@ Planning to add a feature that lets users add their own ml models in it.
 * Firebase as the backend.
 * FireStore to store user generated data.
 * Hugging face for AI models.
+
+Thanks for reading and checking out the project :)
