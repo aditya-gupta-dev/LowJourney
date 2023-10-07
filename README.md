@@ -15,4 +15,4 @@ The app usees Svelte with Typescript on the frontend.
 Svelte-routing as a router.
 Firebase as the backend.
 FireStore to store user generated data.
-
+Hugging face for AI models.
