@@ -11,8 +11,8 @@ Planning to add a feature that lets users add their own ml models in it.
 
 ## Tech Stack 
 
-The app usees Svelte with Typescript on the frontend.
-Svelte-routing as a router.
-Firebase as the backend.
-FireStore to store user generated data.
-Hugging face for AI models.
+* The app usees Svelte with Typescript on the frontend.
+* Svelte-routing as a router.
+* Firebase as the backend.
+* FireStore to store user generated data.
+* Hugging face for AI models.
