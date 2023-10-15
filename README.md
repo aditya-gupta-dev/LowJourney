@@ -17,4 +17,10 @@ Planning to add a feature that lets users add their own ml models in it.
 * FireStore to store user generated data.
 * Hugging face for AI models.
 
+## How to run
+
+* Goto `src/config.js` and add your firebase credentials
+`npm install`
+`npm run dev`
+
 Thanks for reading and checking out the project :)
