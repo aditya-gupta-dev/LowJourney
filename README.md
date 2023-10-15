@@ -20,7 +20,12 @@ Planning to add a feature that lets users add their own ml models in it.
 ## How to run
 
 * Goto `src/config.js` and add your firebase credentials
+* Install the dependencies
 * `npm install`
+* Run in development mode
 * `npm run dev`
+
+* Build the project
+* `npm run build`
 
 Thanks for reading and checking out the project :)
